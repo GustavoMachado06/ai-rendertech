@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI RenderTech - Experiência 3D Futurista</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0ea5e9',
+            secondary: '#22c55e',
+            accent: '#facc15',
+            neon: '#14f1ff',
+            darkbg: '#030712'
+          },
+          boxShadow: {
+            neon: '0 0 15px rgba(20, 241, 255, 0.6)',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body { scroll-behavior: smooth; }
+    #particles { position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(14,165,233,0.05), transparent 70%); z-index: 0; }
+    canvas { position: absolute; top: 0; left: 0; }
+    .btn-neon { box-shadow: 0 0 10px rgba(20,241,255,0.5), 0 0 20px rgba(20,241,255,0.3); transition: all 0.3s ease; }
+    .btn-neon:hover { box-shadow: 0 0 20px rgba(20,241,255,0.8), 0 0 40px rgba(20,241,255,0.5); transform: scale(1.05); }
+    .card-holo { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(8px); transition: 0.3s ease; }
+    .card-holo:hover { border-color: rgba(20,241,255,0.4); box-shadow: 0 0 20px rgba(20,241,255,0.3); }
+  </style>
+</head>
+<body class="relative bg-darkbg text-gray-200 overflow-x-hidden font-sans">
+
+  <!-- MENU FIXO -->
+  <header class="fixed top-0 left-0 w-full bg-black/60 backdrop-blur-md z-50">
+    <nav class="flex justify-center space-x-6 py-4 text-gray-200 font-medium">
+      <a href="#home" class="hover:text-neon">Home</a>
+      <a href="#vr" class="hover:text-neon">Realidade Virtual</a>
+      <a href="#ar" class="hover:text-neon">Realidade Aumentada</a>
+      <a href="#ia" class="hover:text-neon">Inteligência Artificial</a>
+      <a href="#render" class="hover:text-neon">Renderização 3D</a>
+      <a href="#redes" class="hover:text-neon">Impulsione Redes</a>
+      <a href="#planos" class="hover:text-neon">Planos</a>
+      <a href="#contato" class="hover:text-neon">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24">
+    <div class="relative z-10" data-aos="fade-up">
+      <h1 class="text-6xl md:text-7xl font-extrabold text-white drop-shadow-lg tracking-wide">
+        AI RenderTech
+      </h1>
+      <p class="mt-6 text-xl md:text-2xl max-w-2xl mx-auto text-gray-400 leading-relaxed">
+        Renderização 3D <span class="text-neon">Ultra Realista</span> com <span class="text-primary">IA</span> e <span class="text-secondary">VR Imersivo</span>.
+      </p>
+      <a href="https://wa.me/5512988434427"
+         class="btn-neon mt-10 inline-block px-10 py-4 text-lg font-bold rounded-full bg-cyan-500/10 text-neon border border-cyan-400">
+         🚀 Transformar Minha Ideia
+      </a>
+    </div>
+    <div class="absolute w-full h-full flex justify-between px-10 opacity-20">
+      <div class="w-1 bg-gradient-to-b from-cyan-500 via-transparent to-transparent animate-pulse"></div>
+      <div class="w-1 bg-gradient-to-b from-green-500 via-transparent to-transparent animate-pulse delay-200"></div>
+      <div class="w-1 bg-gradient-to-b from-blue-500 via-transparent to-transparent animate-pulse delay-500"></div>
+    </div>
+  </section>
+
+  <!-- VANTAGENS -->
+  <section class="relative py-24 z-10">
+    <h2 class="text-center text-4xl font-bold text-white mb-16" data-aos="fade-up">
+      Por que somos <span class="text-neon">Futuristas?</span>
+    </h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+      <div class="card-holo p-8 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-2xl font-bold text-primary mb-4">⚡ 8x Mais Rápido</h3>
+        <p class="text-gray-400">Renderização acelerada por IA, reduzindo horas para minutos.</p>
+      </div>
+      <div class="card-holo p-8 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-secondary mb-4">🕶️ Realidade Virtual</h3>
+        <p class="text-gray-400">Explore seus projetos com <strong>Meta Quest</strong> antes de investir.</p>
+      </div>
+      <div class="card-holo p-8 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="300">
+        <h3 class="text-2xl font-bold text-accent mb-4">💰 Economia Inteligente</h3>
+        <p class="text-gray-400">Evite erros caros e economize até <strong>65%</strong> no orçamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO VR -->
+  <section id="vr" class="py-24 text-center bg-black">
+    <h2 class="text-4xl font-bold mb-6 text-neon">Experiência VR Imersiva</h2>
+    <p class="text-gray-400 leading-relaxed max-w-3xl mx-auto">
+      Leve seus clientes para dentro do projeto com <strong>Realidade Virtual</strong>, compatível com <strong>Meta Quest</strong>.
+    </p>
+    <div class="mt-10">
+      <img src="img/vr-example.jpg" alt="Exemplo VR" class="rounded-xl mx-auto shadow-lg">
+    </div>
+  </section>
+
+  <!-- SEÇÃO AR -->
+  <section id="ar" class="py-24 text-center">
+    <h2 class="text-4xl font-bold mb-6 text-primary">Realidade Aumentada</h2>
+    <p class="text-gray-400 leading-relaxed max-w-3xl mx-auto">
+      Com <strong>Realidade Aumentada</strong>, seu cliente visualiza o projeto no ambiente físico em tempo real.
+    </p>
+    <div class="mt-10">
+      <img src="img/ar-example.jpg" alt="Exemplo AR" class="rounded-xl mx-auto shadow-lg">
+    </div>
+  </section>
+
+  <!-- SEÇÃO IA -->
+  <section id="ia" class="py-24 text-center bg-black">
+    <h2 class="text-4xl font-bold mb-6 text-secondary">Renderização com IA</h2>
+    <p class="text-gray-400 leading-relaxed max-w-3xl mx-auto">
+      Aceleramos o processo criativo com <strong>Inteligência Artificial</strong>, gerando texturas realistas e iluminação inteligente.
+    </p>
+    <div class="mt-10">
+      <img src="img/ai-example.jpg" alt="Exemplo IA" class="rounded-xl mx-auto shadow-lg">
+    </div>
+  </section>
+
+  <!-- SEÇÃO RENDER -->
+  <section id="render" class="py-24 text-center">
+    <h2 class="text-4xl font-bold mb-6 text-accent">Renderização 3D Realista</h2>
+    <p class="text-gray-400 leading-relaxed max-w-3xl mx-auto">
+      Renderizações ultra realistas que transmitem o verdadeiro potencial do seu projeto.
+    </p>
+    <div class="mt-10">
+      <img src="img/render-example.jpg" alt="Exemplo Render" class="rounded-xl mx-auto shadow-lg">
+    </div>
+  </section>
+
+  <!-- SEÇÃO REDES -->
+  <section id="redes" class="py-24 text-center bg-black">
+    <h2 class="text-4xl font-bold mb-6 text-pink-400">Impulsione suas Redes</h2>
+    <p class="text-gray-400 leading-relaxed max-w-3xl mx-auto">
+      Criamos conteúdos 3D impactantes para fortalecer sua presença digital e atrair mais clientes.
+    </p>
+    <div class="mt-10">
+      <img src="img/social-example.jpg" alt="Exemplo Redes" class="rounded-xl mx-auto shadow-lg">
+    </div>
+  </section>
+
+  <!-- SEÇÃO ALUGUEL DE EQUIPAMENTOS -->
+<section class="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black text-center">
+  <h2 class="text-4xl font-bold mb-10 text-neon" data-aos="fade-up">🎯 Aluguel de Equipamentos VR</h2>
+  <p class="text-gray-400 max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+    Alugue o <strong>Meta Quest 3</strong> para experiências imersivas em diferentes contextos, seja para uso pessoal, empresarial ou terapêutico.
+    Pacotes flexíveis para qualquer necessidade.
+  </p>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+
+    <!-- FESTAS / GAMES -->
+    <div class="card-holo p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="100">
+      <h3 class="text-xl font-bold text-primary mb-2">🎉 Festas & Games</h3>
+      <p class="text-gray-400 mb-4">Entretenimento imersivo com jogos VR para aniversários, festas e encontros sociais.</p>
+      <p class="text-2xl font-bold text-white mb-4">R$ 350 / diária</p>
+      <button class="btn-neon px-6 py-2 rounded-full">Reservar Agora</button>
+    </div>
+
+    <!-- EMPRESARIAL -->
+    <div class="card-holo p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="200">
+      <h3 class="text-xl font-bold text-secondary mb-2">🏢 Ambientes Empresariais</h3>
+      <p class="text-gray-400 mb-4">Ideal para reuniões, eventos corporativos, treinamentos e apresentações em Realidade Aumentada.</p>
+      <p class="text-2xl font-bold text-white mb-4">R$ 550 / evento</p>
+      <button class="btn-neon px-6 py-2 rounded-full">Reservar Agora</button>
+    </div>
+
+    <!-- TERAPIAS / RELAXAMENTO -->
+    <div class="card-holo p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="300">
+      <h3 class="text-xl font-bold text-accent mb-2">🌿 Terapias & Relaxamento</h3>
+      <p class="text-gray-400 mb-4">Ambientes virtuais como praias, montanhas e natureza para reduzir estresse e melhorar bem-estar.</p>
+      <p class="text-2xl font-bold text-white mb-4">R$ 280 / sessão</p>
+      <button class="btn-neon px-6 py-2 rounded-full">Reservar Agora</button>
+    </div>
+
+    <!-- ESTUDOS E SIMULAÇÕES -->
+    <div class="card-holo p-6 rounded-xl text-center" data-aos="zoom-in" data-aos-delay="400">
+      <h3 class="text-xl font-bold text-pink-400 mb-2">📚 Estudos & Simulações</h3>
+      <p class="text-gray-400 mb-4">Experiências educacionais, simulações de espaços confinados e aprendizado tecnológico avançado.</p>
+      <p class="text-2xl font-bold text-white mb-4">R$ 300 / módulo</p>
+      <button class="btn-neon px-6 py-2 rounded-full">Reservar Agora</button>
+    </div>
+
+  </div>
+
+  <div class="mt-12">
+    <a href="https://wa.me/5512988434427" class="btn-neon px-10 py-4 rounded-full text-lg font-bold border border-neon text-neon">
+      💬 Consultar disponibilidade do Meta Quest 3
+    </a>
+  </div>
+</section>
+
+  <!-- PLANOS NOVOS -->
+  <section id="planos" class="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black">
+    <h2 class="text-center text-4xl font-bold mb-14" data-aos="fade-up">
+      Soluções <span class="text-neon">Sob Medida</span>
+    </h2>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 px-6">
+      <div class="card-holo p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-bold text-primary mb-4">Visual Essencial</h3>
+        <p class="text-gray-400 mb-6">Pré-visualização rápida e eficiente para projetos iniciais.</p>
+        <ul class="text-gray-300 text-left space-y-2 mb-6">
+          <li>✅ 1 Renderização HD</li>
+          <li>✅ Ajustes básicos de iluminação</li>
+          <li>✅ Entrega rápida</li>
+        </ul>
+        <a href="https://wa.me/5512988434427" class="btn-neon mt-4 inline-block px-6 py-3 rounded-full font-bold">📩 Solicitar Orçamento</a>
+      </div>
+      <div class="card-holo p-8 rounded-xl text-center border border-neon" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-secondary mb-4">Experiência Avançada</h3>
+        <p class="text-gray-400 mb-6">Mais detalhes e realismo para impressionar clientes.</p>
+        <ul class="text-gray-300 text-left space-y-2 mb-6">
+          <li>✅ Modelo 3D completo</li>
+          <li>✅ Tour virtual 360°</li>
+          <li>✅ Melhorias avançadas</li>
+        </ul>
+        <a href="https://wa.me/5512988434427" class="btn-neon mt-4 inline-block px-6 py-3 rounded-full font-bold">📩 Solicitar Orçamento</a>
+      </div>
+      <div class="card-holo p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-2xl font-bold text-accent mb-4">Imersão Total</h3>
+        <p class="text-gray-400 mb-6">Experiência completa com VR e ambientes personalizados.</p>
+        <ul class="text-gray-300 text-left space-y-2 mb-6">
+          <li>✅ VR interativo para Meta Quest</li>
+          <li>✅ 3 decorações</li>
+          <li>✅ Vídeo promocional</li>
+        </ul>
+        <a href="https://wa.me/5512988434427" class="btn-neon mt-4 inline-block px-6 py-3 rounded-full font-bold">📩 Solicitar Orçamento</a>
+      </div>
+      <div class="card-holo p-8 rounded-xl text-center border border-pink-400" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-2xl font-bold text-pink-400 mb-4">Projeto Sob Demanda</h3>
+        <p class="text-gray-400 mb-6">Solução completa para empresas e construtoras.</p>
+        <ul class="text-gray-300 text-left space-y-2 mb-6">
+          <li>✅ Consultoria estratégica</li>
+          <li>✅ VR + AR + Renderização em lote</li>
+          <li>✅ Galeria interativa online</li>
+          <li>✅ Suporte premium</li>
+        </ul>
+        <a href="https://wa.me/5512988434427" class="btn-neon mt-4 inline-block px-6 py-3 rounded-full font-bold">📩 Solicitar Orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-24 text-center">
+    <h2 class="text-4xl font-bold mb-6 text-neon">Fale com a AI RenderTech</h2>
+    <p class="text-gray-400 mb-8">Escolha a melhor forma de contato para tirar dúvidas ou solicitar orçamento.</p>
+    <div class="space-y-4 max-w-md mx-auto">
+      <a href="https://wa.me/5512988434427" class="block px-8 py-4 bg-green-600 rounded-full hover:scale-105 transition">💬 WhatsApp Direto</a>
+      <a href="mailto:contato@airendertech.com" class="block px-8 py-4 bg-blue-600 rounded-full hover:scale-105 transition">📧 contato@airendertech.com</a>
+      <a href="tel:+5512988434427" class="block px-8 py-4 bg-gray-700 rounded-full hover:scale-105 transition">📞 +55 12 98843-4427</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-center py-6 text-gray-500">
+    &copy; 2025 - AI RenderTech | Experiência 3D Futurista
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, easing: 'ease-out', once: true });</script>
+</body>
+</html>
